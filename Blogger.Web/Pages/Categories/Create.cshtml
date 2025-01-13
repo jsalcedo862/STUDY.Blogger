@@ -1,0 +1,27 @@
+﻿@page
+@model Blogger.Web.Pages.Categories.CreateModel
+@{
+}
+
+
+<form method="post">
+    <div class="border p-3 mt-4">
+
+        <div class="row pb-2">
+            <h2 class="text-primary pl3">Create Category</h2>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="@Model.Category.Name"></label>
+            <input asp-for="@Model.Category.Name" type="text" class="form-control"/>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="@Model.Category.DisplayOrder"></label>
+            <input asp-for="@Model.Category.DisplayOrder" type="text" class="form-control"/>
+        </div>
+
+        <button type="submit1" class="btn btn-primary" style="width:150px">Create</button>
+
+    </div>
+</form>

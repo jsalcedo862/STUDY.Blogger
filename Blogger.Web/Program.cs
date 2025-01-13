@@ -1,7 +1,16 @@
+using Blogger.Web.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Connect db context to the database
+builder.Services.AddDbContext<ApplicationDbContext>(options=>options.UseSqlServer(
+    // will look for default connection key name in connection string in appsettings.json
+    builder.Configuration.GetConnectionString("DefaultConnection")
+    ));
 
 var app = builder.Build();
 
